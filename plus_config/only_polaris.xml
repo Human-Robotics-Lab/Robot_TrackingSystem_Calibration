@@ -1,0 +1,51 @@
+<PlusConfiguration version="2.1">
+
+  <DataCollection StartupDelaySec="1.0">
+    <DeviceSet 
+      Name="polaris"
+      Description="polaris" />
+
+    <Device
+      Id="TrackerDevice"
+      Type="PolarisTracker"
+      SerialPort="4"
+      BaudRate="115200"
+      LocalTimeOffsetSec="0"
+      ToolReferenceFrame="Polaris" >
+      <DataSources>
+        <DataSource Type="Tool" Id="Probe" RomFile="C:/Dev/RobotPolarisCalibration/plus_config/NdiToolDefinitions/8700339.rom" />
+        <DataSource Type="Tool" Id="Stylus" RomFile="C:/Dev/RobotPolarisCalibration/plus_config/NdiToolDefinitions/8700340.rom" />
+        <DataSource Type="Tool" Id="Tracker" RomFile="C:/Dev/RobotPolarisCalibration/plus_config/NdiToolDefinitions/8700449.rom" />
+      </DataSources>
+      <OutputChannels>
+        <OutputChannel Id="PolarisStream" >
+          <DataSource Id="Probe"/>
+          <DataSource Id="Stylus"/>
+		  <DataSource Id="Tracker"/>
+        </OutputChannel>
+      </OutputChannels>
+    </Device>
+   
+  </DataCollection>
+  
+  
+ <PlusOpenIGTLinkServer 
+	MaxNumberOfIgtlMessagesToSend="1" 
+	MaxTimeSpentWithProcessingMs="50" 
+	ListeningPort="18944" 
+	SendValidTransformsOnly="true" 
+	OutputChannelId="PolarisStream" > 
+	<DefaultClientInfo> 
+		<MessageTypes> 
+			<Message Type="TRANSFORM" />
+		</MessageTypes>
+		<TransformNames>
+			<Transform Name="ProbeToPolaris" />
+		</TransformNames>
+	</DefaultClientInfo>
+  </PlusOpenIGTLinkServer> 
+  
+  
+
+  
+</PlusConfiguration>

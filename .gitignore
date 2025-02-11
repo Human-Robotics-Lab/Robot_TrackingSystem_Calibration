@@ -1,32 +1,16 @@
-# Prerequisites
-*.d
+CMakeCache.txt
+/bin
+/vcpkg_installed
+/CMakeFiles
+/lib
+/Matlab
+.ninja_deps
+.ninja_log
+build.ninja
+cmake_install.cmake
+/build
+/.vscode
+.vscode/settings.json
+*.log
+*.asv
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
