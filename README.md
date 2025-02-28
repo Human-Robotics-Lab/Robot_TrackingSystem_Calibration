@@ -1,4 +1,5 @@
-# RobotPolarisCalibration
+# Robot_TrackingSystem_Calibration
+
 This repository contains the library developed at the Surgical Robotics Lab in IST, Portugal to perform the spatial calibration between a surgical robot and the Polaris Spectra optical navigation system.
 
 
